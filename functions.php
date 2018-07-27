@@ -163,13 +163,8 @@ add_action( 'widgets_init', 'wp_bootstrap_starter_widgets_init' );
  */
 function wp_bootstrap_starter_scripts() {
 	// load bootstrap css
-	wp_enqueue_style( 'dawrynow-theme-bootstrap-css', get_template_directory_uri() . '/inc/assets/css/bootstrap.min.css', array(), '4.2', 'screen' );
-    // fontawesome cdn
-    wp_enqueue_style( 'wp-bootstrap-pro-fontawesome', get_template_directory_uri() . '/inc/assets/css/fontawesome.css', array(), '0.5.0', 'all' );
-	// load bootstrap css
-    wp_enqueue_style( 'dawrynow-theme-droid-naskh' , get_template_directory_uri() . '/inc/assets/css/presets/typography/noto-naskh.css',  array(), '0.1.0', 'all' );
-    wp_enqueue_style( 'dawrynow-theme-droid-kufi' , get_template_directory_uri() . '/inc/assets/css/presets/typography/noto-kufi.css',  array(), '0.1.0', 'all' );
-    wp_enqueue_style( 'dawrynow-theme-open-sans' , get_template_directory_uri() . '/inc/assets/css/presets/typography/open-sans.css',  array(), '0.1.0', 'all' );
+	wp_enqueue_style( 'dawrynow-theme-all-css', get_template_directory_uri() . '/inc/assets/css/all.min.css', array(), '4.2', 'screen' );
+    wp_enqueue_style( 'dawrynow-theme-fonts' , get_template_directory_uri() . '/inc/assets/css/presets/typography/fonts.min.css',  array(), '0.1.0', 'all' );
     wp_enqueue_style( 'dawrynow-now-style', get_stylesheet_uri() );
     if ( is_rtl() ) {
 	wp_enqueue_style( 'dawrynow-theme-custom-css', get_template_directory_uri() . '/inc/assets/css/custom.css', array(), '4.2', 'screen' );   
@@ -188,10 +183,7 @@ function wp_bootstrap_starter_scripts() {
     wp_script_add_data( 'html5hiv', 'conditional', 'lt IE 9' );
 
 	// load bootstrap js
-    wp_enqueue_script('dawrynow-theme-popper', get_template_directory_uri() . '/inc/assets/js/popper.min.js', array(), '', true );
-	wp_enqueue_script('dawrynow-theme-bootstrapjs', get_template_directory_uri() . '/inc/assets/js/bootstrap.min.js', array(), '', true );
-    wp_enqueue_script('dawrynow-theme-themejs', get_template_directory_uri() . '/inc/assets/js/theme-script.min.js', array(), '', true );
-	wp_enqueue_script( 'dawrynow-theme-skip-link-focus-fix', get_template_directory_uri() . '/inc/assets/js/skip-link-focus-fix.min.js', array(), '20151215', true );
+    wp_enqueue_script('dawrynow-theme-popper', get_template_directory_uri() . '/inc/assets/js/bundle.js', array(), '', true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
